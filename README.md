@@ -1,30 +1,39 @@
-# React + TypeScript + Vite
+## Title
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Table of Contents
+* [Background](#Background)
+* [Features](#Features)
+* [Installation and Setup](#Installation-and-Setup)
+* [Usage](#Usage)
+* [License](#License)
 
-Currently, two official plugins are available:
+## Background
+This is a simple React application that allows searching for details on courses. 
+It was built using ReactJS, Typescript, Tailwind and SCSS
+It was built as a requirement for the Ekatra job
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+An API for searching for courses from a database and generating course details using AI if not available.
+Key capabilities
+  * Search for a course
+  * Get course details
+  * Generation of new course details using AI
 
-## Expanding the ESLint configuration
+<!-- - Screenshots or diagrams to illustrate features -->
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Installation and Setup
+- Installation steps
+  - Clone the repo 
+  - Install dependencies using "npm install" or "yarn" command 
+  - Optional:
+    - Clone and deploy the backend server too. available at https://github.com/Onelson-main/course-content-generator-server
+    - Setup environment variables
+      - VITE_BASE_URL : the url of the backend server
+- Run the server
+  - Starting the server using "npm dev" locally 
 
-- Configure the top-level `parserOptions` property like this:
+## Usage
+Enter a course name to search for details on the course. If the course is not in the DB, it would be created using AI
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## License
+- The license the software is released under (e.g. MIT, Apache, etc.)

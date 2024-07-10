@@ -1,4 +1,3 @@
-import { toast } from "react-toastify"
 import { get } from "./webClient"
 
 export const getCourses = async () => {
