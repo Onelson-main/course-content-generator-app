@@ -1,0 +1,231 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --accent: #1DB8B4;
+    --background: #F5F5F5;
+    --background-2: #FFFFFF;
+    --foreground: #3B434E;
+
+    --rad: 4px;
+    --s1: 4px;
+    --s2: 8px;
+    --s3: 12px;
+    --s4: 16px;
+    --s5: 20px;
+    --s10: 40px;
+    --pad: var(--s4);
+}
+
+.inria-sans-light {
+    font-family: "Inria Sans", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.inria-sans-regular {
+    font-family: "Inria Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.inria-sans-bold {
+    font-family: "Inria Sans", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.inria-sans-light-italic {
+    font-family: "Inria Sans", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.inria-sans-regular-italic {
+    font-family: "Inria Sans", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.inria-sans-bold-italic {
+    font-family: "Inria Sans", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+}
+
+
+html,
+body,
+#root {
+    font-family: "Inria Sans";
+    color: var(--foreground);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+p {
+    font-family: 'Inria Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+h4 {
+    font-family: 'Inria Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 48px;
+}
+
+
+button {
+    background: var(--accent);
+    border-radius: var(--rad);
+    padding: var(--s2);
+    padding-left: var(--s4);
+    padding-right: var(--s4);
+    color: var(--background-2);
+    font-weight: bold;
+
+    &.inverted {
+        background: var(--background-2);
+        color: var(--accent);
+    }
+}
+
+.round {
+    border-radius: var(--rad);
+}
+
+.padded-x {
+    padding-left: var(--s5);
+    padding-right: var(--s5);
+}
+
+#navbar {
+    height: 65px;
+    width: 100%;
+    background: var(--background-2);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--s4);
+    position: fixed;
+    z-index: 100;
+
+    >img {
+        height: 40px;
+    }
+}
+
+.top-pad {
+    padding-top: 65px;
+}
+
+#main_input {
+    height: 60px;
+    border-radius: var(--rad);
+}
+
+
+.inner {
+    position: relative;
+    top: var(--s10);
+    display: flex;
+    flex-direction: column;
+
+    >* {
+        margin-top: var(--s4);
+    }
+}
+
+.course-detail {
+    background-color: var(--background-2);
+    border-radius: var(--rad);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 110px;
+    color: var(--foreground);
+
+
+    box-shadow: 0 3px 10px rgb(0, 0, 0, 0.2);
+
+    >div {
+        flex: 1;
+        height: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        >:first-child {
+            margin-bottom: var(--s1);
+        }
+
+        >:nth-child(2) {
+            font-weight: bolder !important;
+        }
+    }
+
+    >:first-child {
+        border-right: 1px solid var(--foreground);
+    }
+}
+
+/* HTML: <div class="loader"></div> */
+.loader {
+    width: 50px;
+    aspect-ratio: 1;
+    --c: no-repeat radial-gradient(farthest-side, var(--accent) 92%, #0000);
+    background:
+        var(--c) 50% 0,
+        var(--c) 50% 100%,
+        var(--c) 100% 50%,
+        var(--c) 0 50%;
+    background-size: 10px 10px;
+    animation: l18 1s infinite;
+    position: relative;
+}
+
+.loader::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    margin: 3px;
+    background: repeating-conic-gradient(#0000 0 35deg, var(--accent) 0 90deg);
+    -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 3px), #000 0);
+    border-radius: 50%;
+}
+
+@keyframes l18 {
+    100% {
+        transform: rotate(.5turn)
+    }
+}
+// 514b82
+.loading {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    z-index: 999;
+    top: 0px;
+    left: 0px;
+    background: #FFFFFFBF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
