@@ -6,6 +6,8 @@ import { useEffect } from "react";
 export default function Results() {
     let navigate = useNavigate();
     const course = useLocation().state.course as Course_type;
+
+    // if no course is in memory, navigate to the home page
     useEffect(() => {
         if (!course) {
             navigate('')

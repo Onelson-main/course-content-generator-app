@@ -1,5 +1,6 @@
 import { get } from "./webClient"
 
+// gets a list of available courses from the database
 export const getCourses = async () => {
     try {
         let res = await get('courses')
@@ -11,7 +12,7 @@ export const getCourses = async () => {
     }
 }
 
-
+// gets details on a course using the course name
 export const getCourseByName = async (title: string) => {
     try {
         let res = await get(`courses/${title}?mode=title`)
@@ -27,6 +28,7 @@ export const getCourseByName = async (title: string) => {
     }
 }
 
+// gets details on a course using the course ID
 export const getCourseByID = async (id: number) => {
     try {
         let res = await get(`courses/${id}`)

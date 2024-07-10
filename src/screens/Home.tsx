@@ -11,6 +11,7 @@ export default function Home() {
     let [loading, setLoading] = useState(false);
     let [courses, setCourses] = useState([])
 
+    // function to get a course using either the ID or the course name
     const search = async (id?: number) => {
         if (searchKey.length == 0) {
             toast("Please enter a course name",)
@@ -32,6 +33,7 @@ export default function Home() {
         setLoading(false);
     }
 
+    // function called on page load to get the courses from the server and store in memory
     const setup = async () => {
         let res = await getCourses()
         setCourses(res);

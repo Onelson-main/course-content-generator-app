@@ -1,6 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-// import App from './App.tsx'
 import './index.scss'
 import Router from './router'
 import { ToastContainer } from 'react-toastify';
@@ -23,7 +22,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
       theme="light"
       progressStyle={{ backgroundColor: colors.ACCENT }}
       toastStyle={{ zIndex: 1999, textAlign: 'center', marginBottom: 60 }}
-    // transition={Bounce}
+
     />
   </React.StrictMode>,
 )
@@ -42,7 +41,6 @@ declare global {
         style: any
 
       }
-      //React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> && {};
     }
   }
 }
