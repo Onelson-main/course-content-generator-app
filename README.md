@@ -34,6 +34,9 @@ Key capabilities
 
 ## Usage
 Enter a course name to search for details on the course. If the course is not in the DB, it would be created using AI
+Note: 
+the server is hosted on render for free and therefore, would wind down if there's inactivity. 
+therefore, the app may be slow initially
 
 ## License
 - The license the software is released under (e.g. MIT, Apache, etc.)
