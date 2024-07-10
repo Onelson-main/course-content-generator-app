@@ -1,7 +1,7 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import logo from "../assets/images/SmarterU.svg"
 import { Course_type } from "../core/types";
-import { useEffect } from "react";
+import { Fragment, useEffect } from "react";
 
 export default function Results() {
     let navigate = useNavigate();
@@ -47,16 +47,16 @@ export default function Results() {
                 <h4>Modules</h4>
                 {course.modules?.map((module, index) => {
                     return (
-                        <>
+                        <Fragment key={index}>
                             <span><b>Module {index + 1}: </b>{module.title}</span>
                             <ul>
                                 {module.topics?.map((topic) => (
-                                    <li>· {topic}</li>
+                                    <li key={topic}>· {topic}</li>
                                 ))}
                                 <li>· Steps</li>
                             </ul>
                             <br />
-                        </>
+                        </Fragment>
                     )
                 })}
             </div>

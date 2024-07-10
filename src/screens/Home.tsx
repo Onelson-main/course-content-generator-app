@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import logo from "../assets/images/SmarterU.svg"
 import { colors } from "../core/style"
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { getCourseByID, getCourseByName, getCourses } from "../services/course_service";
 import { toast } from "react-toastify";
 
@@ -50,10 +50,10 @@ export default function Home() {
                 <button>JOIN NOW</button>
             </div>
 
-            <div className="flex flex-1 flex-col justify-center items-stretch pb-20 padded-x">
+            <div id="main_input_container" className="flex flex-1 flex-col justify-center items-stretch pb-20 padded-x">
                 <div className="flex flex-col justify-center items-stretch">
                     <h1 className="text-center text-BACKGROUND_2">Find a Course</h1>
-                    <div className="flex mt-5 bg-BACKGROUND_2 rounded-md items-center pr-2">
+                    <div id="" className="flex mt-5 bg-BACKGROUND_2 rounded-md items-center pr-2">
                         <input id="main_input" type="text"
                             value={searchKey} placeholder="Enter course name"
                             onChange={(ev) => setSearchKey(ev.target.value)}
@@ -67,7 +67,7 @@ export default function Home() {
                 {suggestions?.length > 0 && searchKey
                     ? <div className="bg-BACKGROUND_2 max-h-52 round mt-4 flex flex-col gap-5 p-4 overflow-scroll">
                         {suggestions?.map((suggestion: { id: number, title: string }) => (
-                            <>
+                            <Fragment key={suggestion.id}>
                                 <div className="flex items-center gap-2" onClick={() => {
                                     setSearchKey(suggestion.title);
                                     search(suggestion.id)
@@ -78,7 +78,7 @@ export default function Home() {
                                     <p>{suggestion.title}</p>
                                 </div>
 
-                            </>
+                            </Fragment>
                         ))}
                     </div>
                     : null

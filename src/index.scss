@@ -111,6 +111,11 @@ button {
 .padded-x {
     padding-left: var(--s5);
     padding-right: var(--s5);
+
+    @media (min-width: 768px) {
+        padding-left: calc(3 * var(--s5));
+        padding-right: calc(3 * var(--s5));
+    }
 }
 
 #navbar {
@@ -134,9 +139,19 @@ button {
     padding-top: 65px;
 }
 
+#main_input_container {
+    @media (min-width: 768px) {
+        width: 60%;
+        margin: auto;
+        margin-top: var(--s4);
+    }
+}
+
 #main_input {
     height: 60px;
     border-radius: var(--rad);
+
+
 }
 
 
@@ -215,6 +230,7 @@ button {
         transform: rotate(.5turn)
     }
 }
+
 // 514b82
 .loading {
     position: fixed;
