@@ -53,7 +53,6 @@ export default function Results() {
                                 {module.topics?.map((topic) => (
                                     <li key={topic}>· {topic}</li>
                                 ))}
-                                <li>· Steps</li>
                             </ul>
                             <br />
                         </Fragment>

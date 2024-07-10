@@ -15,7 +15,7 @@ export const getCourses = async () => {
 // gets details on a course using the course name
 export const getCourseByName = async (title: string) => {
     try {
-        let res = await get(`courses/${title}?mode=title`)
+        let res = await get(`courses/search/?q=${title}`)
         let { data } = await res?.json()
         if (res?.status == 200) {
             return { status: true, data }
